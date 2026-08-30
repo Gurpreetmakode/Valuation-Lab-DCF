@@ -1,0 +1,39 @@
+/*
+  Design tokens for Intrinsic.
+
+  Palette concept: a clean, light fintech dashboard in the spirit of
+  modern Indian trading platforms (Sensibull, Zerodha Kite) — white cards
+  on a soft gray page, a confident blue/indigo primary accent, and clear
+  green/red for undervalued/overvalued, rather than the earlier antique
+  ledger look. No dark theme.
+
+  Variable names are kept stable from the previous theme so component
+  files did not need to change to pick up the new palette — only the
+  values here changed.
+*/
+
+:root {
+  /* color */
+  --ink: #16192b;              /* primary text, headers */
+  --paper: #f4f6fb;            /* page background, soft cool gray */
+  --panel: #ffffff;            /* card backgrounds */
+  --line: #e4e8f1;             /* hairlines, borders */
+  --brass: #3d5afe;            /* primary accent: buttons, links, focus, ticker pin */
+  --brass-dim: #b7c1fb;
+  --moss: #14a44d;             /* undervalued / positive */
+  --moss-tint: #e7f8ee;
+  --ember: #e5484d;            /* overvalued / negative */
+  --ember-tint: #fdeaea;
+  --slate: #5b6478;            /* secondary text */
+  --slate-light: #9aa2b5;
+
+  /* type */
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Roboto Mono', 'Courier New', monospace;
+
+  /* layout */
+  --radius: 10px;
+  --shadow-card: 0 1px 2px rgba(22, 25, 43, 0.04), 0 6px 20px rgba(22, 25, 43, 0.06);
+  --max-width: 1280px;
+}

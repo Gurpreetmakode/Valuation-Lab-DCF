@@ -1,0 +1,122 @@
+.valuation-line {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px 56px;
+  box-shadow: var(--shadow-card);
+}
+
+.valuation-line--unreliable {
+  border: 1px dashed var(--slate-light);
+  background: repeating-linear-gradient(
+    135deg,
+    var(--panel),
+    var(--panel) 12px,
+    var(--paper) 12px,
+    var(--paper) 24px
+  );
+}
+
+.valuation-line__verdict {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 76px;
+}
+
+.valuation-line__badge {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  text-transform: capitalize;
+}
+
+.valuation-line__badge--moss { color: var(--moss); }
+.valuation-line__badge--ember { color: var(--ember); }
+.valuation-line__badge--brass { color: var(--brass); }
+.valuation-line__badge--unreliable { color: var(--slate); }
+
+.valuation-line__verdict-text {
+  color: var(--slate);
+  font-size: 14px;
+}
+
+.valuation-line__ruler {
+  position: relative;
+  height: 2px;
+  margin: 0 40px;
+}
+
+.valuation-line__track {
+  position: absolute;
+  inset: 0;
+  background: var(--line);
+}
+
+.valuation-line__bracket {
+  position: absolute;
+  top: -1px;
+  height: 4px;
+  border-radius: 2px;
+  opacity: 0.35;
+}
+
+.valuation-line__bracket--moss { background: var(--moss); }
+.valuation-line__bracket--ember { background: var(--ember); }
+.valuation-line__bracket--brass { background: var(--brass); }
+.valuation-line__bracket--unreliable { background: var(--slate-light); }
+
+.valuation-line__pin {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.valuation-line__pin-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 2px solid var(--paper);
+  box-shadow: 0 0 0 1px var(--line);
+  z-index: 2;
+}
+
+.valuation-line__pin--fair .valuation-line__pin-dot { background: var(--brass); }
+.valuation-line__pin--moss .valuation-line__pin-dot { background: var(--moss); }
+.valuation-line__pin--ember .valuation-line__pin-dot { background: var(--ember); }
+.valuation-line__pin--unreliable .valuation-line__pin-dot { background: var(--slate-light); }
+
+.valuation-line__pin-label {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.3;
+}
+
+.valuation-line__pin-label small {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--slate);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* current price label sits below the track, fair value label above,
+   so the two never collide even when the pins are close together */
+.valuation-line__pin--current {
+  top: 18px;
+}
+
+.valuation-line__pin--fair {
+  top: auto;
+  bottom: 18px;
+  flex-direction: column-reverse;
+}

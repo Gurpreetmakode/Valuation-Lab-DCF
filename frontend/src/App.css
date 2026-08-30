@@ -1,0 +1,201 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__main {
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 28px 24px 64px;
+  width: 100%;
+}
+
+.app__heading {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.app__company {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.app__ticker {
+  color: var(--brass);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.app__sector {
+  font-size: 12px;
+  color: var(--slate);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.app__data-source {
+  font-size: 11px;
+  color: var(--brass);
+  border: 1px solid var(--brass-dim);
+  background: rgba(61, 90, 254, 0.06);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-weight: 600;
+}
+
+.app__recalculating {
+  font-size: 12px;
+  color: var(--brass);
+  font-style: italic;
+}
+
+.app__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.app__content--loading {
+  opacity: 0.6;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.app__error {
+  background: var(--ember-tint);
+  color: var(--ember);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  max-width: 520px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.app__footer {
+  border-top: 1px solid var(--line);
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.app__footer p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--slate-light);
+}
+
+.app__dcf-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  margin: 0 0 18px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow-card);
+}
+
+.app__dcf-tab {
+  border: 0;
+  background: transparent;
+  color: var(--slate);
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.app__dcf-tab:hover {
+  color: var(--ink);
+}
+
+.app__dcf-tab--active {
+  background: var(--brass);
+  color: white;
+}
+
+.app__dcf-tab--active:hover {
+  color: white;
+}
+
+.app__tab-note {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  color: var(--slate);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.app__tab-note strong {
+  color: var(--ink);
+}
+
+.app__choices {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow-card);
+  max-width: 820px;
+  margin: 32px auto;
+}
+
+.app__choices h2 {
+  font-size: 20px;
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+
+.app__choices p {
+  margin: 0 0 16px;
+  color: var(--slate-light);
+  font-size: 13.5px;
+}
+
+.app__choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 10px;
+}
+
+.app__choice-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: var(--radius);
+  padding: 12px;
+  cursor: pointer;
+}
+
+.app__choice-card:hover {
+  border-color: var(--brass-dim);
+  background: rgba(61, 90, 254, 0.06);
+}
+
+.app__choice-symbol {
+  color: var(--brass);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.app__choice-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.app__choice-meta {
+  font-size: 11px;
+  color: var(--slate-light);
+}

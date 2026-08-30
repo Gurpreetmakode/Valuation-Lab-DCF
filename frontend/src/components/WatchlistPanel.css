@@ -1,0 +1,119 @@
+.watchlist {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.watchlist__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.watchlist__title {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--slate);
+  margin-bottom: 4px;
+}
+
+.watchlist__subtitle {
+  font-size: 12.5px;
+  color: var(--slate-light);
+  margin: 0;
+}
+
+.watchlist__add {
+  background: var(--brass);
+  color: var(--ink);
+  border: none;
+  padding: 8px 14px;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.watchlist__add:disabled {
+  background: var(--line);
+  color: var(--slate-light);
+  cursor: default;
+}
+
+.watchlist__empty {
+  font-size: 13px;
+  color: var(--slate-light);
+  padding: 8px 0;
+}
+
+.watchlist__scroll {
+  overflow-x: auto;
+}
+
+.watchlist__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.watchlist__table th {
+  text-align: left;
+  color: var(--slate);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.watchlist__table td {
+  padding: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.watchlist__row--active {
+  background: var(--moss-tint);
+}
+
+.watchlist__ticker-link {
+  background: none;
+  border: none;
+  color: var(--brass);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  padding: 0;
+}
+
+.watchlist__gap--positive { color: var(--moss); font-weight: 600; }
+.watchlist__gap--negative { color: var(--ember); font-weight: 600; }
+
+.watchlist__verdict {
+  text-transform: capitalize;
+  font-family: var(--font-body);
+  color: var(--slate);
+}
+
+.watchlist__remove {
+  background: none;
+  border: none;
+  color: var(--slate-light);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0 4px;
+}
+
+.watchlist__remove:hover {
+  color: var(--ember);
+}

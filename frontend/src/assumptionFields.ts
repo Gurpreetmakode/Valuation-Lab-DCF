@@ -1,0 +1,145 @@
+import type { EditableAssumptionField } from './types';
+
+export interface FieldConfig {
+  key: EditableAssumptionField;
+  label: string;
+  hint: string;
+  min: number;
+  max: number;
+  step: number;
+  isPercent: boolean;
+  group: 'core' | 'wacc' | 'operating';
+}
+
+export const FIELD_CONFIGS: FieldConfig[] = [
+  {
+    key: 'growth_rate',
+    label: 'Revenue growth',
+    hint: "Defaulted from the company's own 5-year revenue CAGR.",
+    min: -0.1,
+    max: 0.3,
+    step: 0.005,
+    isPercent: true,
+    group: 'core',
+  },
+  {
+    key: 'discount_rate',
+    label: 'WACC / discount rate',
+    hint: 'Final WACC used to discount FCFF. Recomputed from the WACC inputs below unless you drag this directly.',
+    min: 0.03,
+    max: 0.25,
+    step: 0.005,
+    isPercent: true,
+    group: 'core',
+  },
+  {
+    key: 'risk_free_rate',
+    label: 'Risk-free rate',
+    hint: '10-year Treasury yield.',
+    min: 0.01,
+    max: 0.08,
+    step: 0.001,
+    isPercent: true,
+    group: 'wacc',
+  },
+  {
+    key: 'beta',
+    label: 'Beta',
+    hint: "This stock's sensitivity to the overall market.",
+    min: 0.2,
+    max: 2.5,
+    step: 0.05,
+    isPercent: false,
+    group: 'wacc',
+  },
+  {
+    key: 'equity_risk_premium',
+    label: 'Equity risk premium',
+    hint: 'Long-run extra return investors expect from stocks over risk-free bonds.',
+    min: 0.02,
+    max: 0.08,
+    step: 0.0025,
+    isPercent: true,
+    group: 'wacc',
+  },
+  {
+    key: 'cost_of_debt',
+    label: 'Cost of debt',
+    hint: 'Pre-tax borrowing cost used in WACC. Default is estimated from interest expense and debt.',
+    min: 0.005,
+    max: 0.15,
+    step: 0.0025,
+    isPercent: true,
+    group: 'wacc',
+  },
+  {
+    key: 'debt_weight',
+    label: 'Debt weight',
+    hint: 'Debt / (debt + market equity). Cash is handled separately in the net-debt bridge.',
+    min: 0,
+    max: 0.8,
+    step: 0.01,
+    isPercent: true,
+    group: 'wacc',
+  },
+  {
+    key: 'ebit_margin',
+    label: 'EBIT margin',
+    hint: "Historical average operating margin.",
+    min: 0,
+    max: 0.6,
+    step: 0.005,
+    isPercent: true,
+    group: 'operating',
+  },
+  {
+    key: 'tax_rate',
+    label: 'Tax rate',
+    hint: 'Effective tax rate applied to operating profit.',
+    min: 0.05,
+    max: 0.35,
+    step: 0.005,
+    isPercent: true,
+    group: 'operating',
+  },
+  {
+    key: 'da_pct',
+    label: 'D&A % of revenue',
+    hint: 'Depreciation and amortization added back to cash flow.',
+    min: 0,
+    max: 0.2,
+    step: 0.0025,
+    isPercent: true,
+    group: 'operating',
+  },
+  {
+    key: 'capex_pct',
+    label: 'CapEx % of revenue',
+    hint: 'Capital expenditure subtracted from cash flow.',
+    min: 0,
+    max: 0.25,
+    step: 0.0025,
+    isPercent: true,
+    group: 'operating',
+  },
+  {
+    key: 'nwc_pct',
+    label: 'Working capital change % of revenue',
+    hint: 'Cash tied up or released by working capital each year.',
+    min: -0.1,
+    max: 0.1,
+    step: 0.0025,
+    isPercent: true,
+    group: 'operating',
+  },
+  {
+    key: 'terminal_growth',
+    label: 'Terminal growth',
+    hint: 'Perpetuity growth rate assumed after year 5.',
+    min: 0,
+    max: 0.05,
+    step: 0.001,
+    isPercent: true,
+    group: 'operating',
+  },
+];

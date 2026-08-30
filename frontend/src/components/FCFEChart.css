@@ -1,0 +1,34 @@
+.fcfe-chart {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.fcfe-chart__title {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--slate);
+  margin-bottom: 4px;
+}
+
+.fcfe-chart__subtitle {
+  font-size: 13px;
+  color: var(--slate-light);
+  margin: 0 0 16px;
+}
+
+.fcfe-chart__legend {
+  font-size: 12.5px;
+  color: var(--slate);
+}
+
+.fcfe-chart__terminal {
+  font-size: 13px;
+  color: var(--slate);
+  margin: 12px 0 0;
+}

@@ -1,0 +1,30 @@
+.caveat {
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border-left: 3px solid var(--brass);
+  background: var(--panel);
+  border-top: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.caveat--serious {
+  border-left-color: var(--ember);
+}
+
+.caveat__line {
+  font-size: 13px;
+  color: var(--ink);
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.caveat__line:last-child {
+  margin-bottom: 0;
+}
+
+.caveat__line--minor {
+  color: var(--slate);
+  font-size: 12px;
+}
