@@ -93,8 +93,7 @@ Backend:
 
 1. Sign up for a key at Financial Modeling Prep.
 2. Put it in `backend/.env` as `FMP_API_KEY=your-key-here`.
-3. Optional: add `FMP_API_KEY_2` and `FMP_API_KEY_3` as backup keys. The backend uses key 2 only if key 1 hits quota/rate limits, and key 3 only if keys 1 and 2 both hit quota/rate limits.
-4. Restart uvicorn.
+3. Restart uvicorn.
 
 Without a key, the Yahoo DCF tab still works. The FMP DCF tab needs an FMP key.
 
